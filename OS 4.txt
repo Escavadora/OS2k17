@@ -1,0 +1,15 @@
+rwx je 7, iba rx je 5
+na dalsom zapocte bude skripty dake low a zase prikazy
+
+x.sh meno priezvisko
+OUT: user login sa prihlasil x krat na y, z, a h/m/s
+
+1. last -s <login> alebo grep
+last -s vasko15 | grep '^vasko15' | cut -d\( -f2 | tr -d \)
+
+2. meno priezvisko na login  
+3. spocitat sekundycez bc alebo awk alebo pole
+'
+
+uloha s ipckami, kde z dumpu treba zistit kolko krat sa ipcka s maskou logla 
+1. dostanem ipcku
