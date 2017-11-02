@@ -1,0 +1,6 @@
+semafor je zabezpecena premenna alebo abstraktny datovy typ, vseobecny synchronizacny prostriedok
+
+operacie semaforu - init, wait, signal
+
+monitr je udajovy typ
+
