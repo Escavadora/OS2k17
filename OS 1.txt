@@ -1,0 +1,13 @@
+ctrl a ctrl e zaciatok a koneic riadku
+v bashi je #comment
+file vypise vlastnosti filu
+export v bashi na systemove premenne
+system pager zmenit na less-i
+bash pre bash
+man chsh
+chpass -s newshell
+pocet prihlaseni na osu v septembri
+> presunutie vypisu do suboru
+g G na zaciatok a koniec suboru
+3ja ludia co maju najviac casu na ose za september
+rozdiel medzi " a ´

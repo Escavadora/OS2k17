@@ -1,0 +1,41 @@
+vybrat text editor(vi)
+pager pozeranie dozdu dopredu a search
+cut
+grep
+
+
+kolko druhakov a treiakov robi OS
+je to v /etc/passwd napr.
+16 je 177 cut -d':' -f1 /etc/passwd | grep -c 15
+					grep -c 15$
+					grep -c '15\>'
+15 je 83
+
+efektivnejsi sposob je grep -c '^[[:alpha:]]\{1,\}16:\*' /etc/passwd
+da sa aj grep -c -E '^[[:alpha:]]{1,}16:\*' /etc/passwd
+nemiesto\{1,\} moze byt aj \+
+
+$ koniec riadka
+\> koniec slova
+^ zaciatok riadka
+\< zaciatok slova
+
+top 3 ktory sa prihlasili najviackrat za tento rok
+
+last -f /tmp/wtmp.Sep | grep '\<Sep\>'| cut ' ' -f 1 | sort | uniq -c | sort -rn | head -n 3
+
+uniq odstranuje duplikaty
+
+{2,5} dva az 5 vyskytov
+ v /etc/passwd ktory kruzok ma najviac ludi
+
+grep '\<kr\. [[:digit:]]\+:' /etc/passwd | cut -d':' -f 5 | cut -d',' -f2 | tr -d ' ' | sort | uniq -c | sort -rn | head -n3
+
+grep -e aby som nemusel zbytocne escapovat jak kkt
+. nahradi jeden znak
+
+find
+find -type f -exec grep -l vilhan {} \;
+{} vo finde je cesta k suboru
+
+/daco v lesse je search
