@@ -1,0 +1,11 @@
+urobit posielanie opraveneho crc automaticky
+potvrdzovanie sprav o blokoch (3kb) a neposielat dalej, ale cakat kym sa potvrdi 
+spravnost predchadzajucich sprav, ak su zle poslat znova
+threadovanie na mrte, vsetko mutltitasking
+
+do dalsieho cvika prerobit
+	cisla sprav ktore sa posielaju
+	crc funkciu jebnut do kodu
+	cele posielanie chybneho suboru
+	proadie a velkost fragmentu v hlavicke zvacsit na 4b
+	keep alive staci na 2 pingy

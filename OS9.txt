@@ -1,0 +1,30 @@
+pc system ma v hlavnej pamati priestor na 4 programy. Tieto programy v priemere cakaju 50% casu 
+na v/v operacie. Aka cast casu cpu je nevyuzita
+1......50% casu
+n=4	p=0,5
+p=p^n=0,5^4=0,0625=6,25%
+
+
+pc ma 2mb pamate, os bere 512kb a kazdy program 512kb. Ak vsetky programy travia 60% casu cakanim o kolko by sme
+zvysili priepustnost pridanim 1mb pamate
+n=3	p=0,6
+p=0,6^3 = 0,216 = 21,6%
+p=0,6^5 = 0,077 = 7,7%
+
+		p1-p2 = 13,9%
+b) kolko treba pridat pamate aby bol apripeustnost 99%
+
+0,6^? = 0,01 na vacsie ako 9
+
+
+
+system kondenzuje pamat, 1mb pamat, copy 1 bytu trva o,5 mikrosek, kondenzacie kazdu sekundu, priem dlzka volneho useku je o,4krat velkost priem segemntu
+d - velkost priem segmentu
+1MB = d + d*0,4
+1MB = 1,4d
+d = 1/1,4
+
+t=(1/1,4)*0,5=1/2,8 = 0,357s
+36% celkoveho casu cpu je pouzita na kondenzacie
+
+menej ako 3,5s aby bolo menej ako 10% cpu usage na kondenz
