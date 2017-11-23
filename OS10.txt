@@ -1,0 +1,59 @@
+Pr.1 
+Instrukcia 1ms, page fault je +n ms, page fault je kazdych k instrukcii
+aka je priemerna dlzka trvania instrukcie
+
+( 1+n )/k
+
+Pr.2 
+logick adr priestor kazdeho procesu ma 8 stranok po 1024 slov, 
+mapuje sa do fyxickej pamate s 32 strankovymi ramami.
+
+a)kolko bitov ma log adresa	cislo stranky + offset
+111 + 10bitov = 13 bitov
+b)kolko bitov ma fyz adresa
+este +5 bitov
+
+Pr.6
+32 bit adresny priestor
+2na13 + 2na19
+2na19*100 = 52ms co je 52%
+
+Pr.7
+dvojurovnove tabulky
+4kb stranky
+2kb stranok (2na11)
+2na11	rezia 11
+20 bitov rezia
+
+Pr.8
+15000*2001 = 30s
+7500*2001 = 15s
+
+Pr.9
+log adr priest 1024 stranok
+200 = 100*hit + 500*(1-hit)
+hit = 3/4
+
+Pr.10
+vlastnosti sub systemu na diskoch
+a)otocenie disku je najlepsi 0ms, najhorsi 20ms, priemer 10ms
+tv = 30ms
+tV = 20ms
+vs = 32kB
+vsv = 2kB
+t = 10ms
+2kB/32kB *20ms = 1,25ms
+pocet stranok 32
+T = (30+10+1,25)*32 = 1320ms
+
+b)
+vsv = 4kb
+pocet stranok 16
+4kB/32kB *20ms = 2,5ms
+T = (30+10+2,5)*16 = 680 ms
+
+
+
+
+
+
