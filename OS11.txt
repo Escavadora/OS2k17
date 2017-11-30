@@ -1,0 +1,54 @@
+1024 512 256 128 64 32 16 8 4 2 1
+  1   0   0   0  0  0  0  0 0 0 0 = 2na10 = 0x400
+
+offset 10, 6 page framov
+
+instrukcie 0x0048 < 0x0400
+0
+pole A
+0x1800=0001,10|00,0000,0000
+6
+pole B
+0x1000=0001,11|00,0000,0000
+7
+pole C
+0x2000=0010,00|00,0000,0000
+8
+konstanty 0,1,N              x1x1
+0x2400/1/2=0010,01|00,0000,00 0 0
+9
+
+090900070806090 (00070806090) v zatvorke sa opakuje dookola
+a) LRU
+	0 9 0 9 0 0 0 7 0 8 0 6 0 9 0 | 0 0 0 7 0 8 0 6 0 9 0
+	_____________________________________________________
+1	0 9 0 9 0 0 0 7 0 8 0 6 0 9 0 | 0 0 0 7 0 8 0 6 0 9 0
+2	  0 9 0 9 9 9 0 7 0 8 0 6 0 9 | 9 9 9 0 7 0 8 0 6 0 9
+3	              9 9 7 7 8 8 6 6 | 6 6 6 9 9 7 7 8 8 6 6 
+4	                  9 9 7 7 8 8 | 8 8 8 6 6 9 9 7 7 8 8
+_____________________________________________________________
+        X X           X   X   X   X           X   X   X   X	PAGE FAULT
+	mimo cyklu 6PF, v cykle 4 PF
+1024*4 + 2 = 4098
++2 preto lebo pridavam iba 2PF na zaciatku, ostatne su uz v cykle
+
+b)FIFO
+	0 9 0 9 0 0 0 7 0 8 0 6 0 9 0 | 0 0 0 7 0 8 0 6 0 9 0
+	_____________________________________________________
+1	0 9 9 9 9 9 9 7 7 8 8 6 0 9 9 | 9 9 9 7 7 8 8 6 0 9 9
+2	  0 0 0 0 0 0 9 9 7 7 8 6 0 0 | 0 0 0 9 9 7 7 8 6 0 0
+3	              0 0 9 9 7 8 6 6 | 6 6 6 0 0 9 9 7 8 6 6 
+4	                  0 0 9 7 8 8 | 8 8 8 6 6 0 0 9 7 8 8
+_____________________________________________________________
+        X X           X   X   X X X           X   X   X X X	PAGE FAULT
+	mimo cyklu 7PF, v cykle 5 PF
+1024*5 + 2 = 5122
++2 preto lebo pridavam iba 2PF na zaciatku, ostatne su uz v cykle
+menej efektivny ako LRU v tomto pripade
+
+c)optimalny
+
+vyradujem ten ci najdlhsie nebudem potrebovat, cyklus treba opakovat 3krat kym sa dostanem na
+novy velky cyklus, ktory sa bdue opakovat
+
+5+(1023/3)*4 = 1369
